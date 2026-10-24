@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite this versioned code and simulation-data archive."
+title: "Coded OFDM receiver admission: code, trained models and simulation data"
+authors:
+  - family-names: Tian
+    given-names: Pengliang
+    orcid: "https://orcid.org/0009-0003-5941-9797"
+  - family-names: Zhang
+    given-names: Changjiang
+    orcid: "https://orcid.org/0009-0002-9936-1377"
+version: 0.1.0
+doi: 10.5281/zenodo.23609347
+date-released: 2026-10-24
+url: "https://github.com/pengliangtian06-commits/coded-ofdm-receiver-admission-code-data"
+license: MIT
