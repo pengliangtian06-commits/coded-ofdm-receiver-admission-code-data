@@ -1,0 +1,103 @@
+{
+  "status": "completed",
+  "config": {
+    "purpose": "frozen final architecture; exact deterministic-pilot CP energy; independent shallow control",
+    "seed": 1730,
+    "numerology": {
+      "fft_size": 64,
+      "cp_length": 16,
+      "symbols": 4,
+      "guard": 4,
+      "pilot_spacing": 4
+    },
+    "network": {
+      "width": 48,
+      "blocks": 2,
+      "exits": [
+        2
+      ],
+      "frontend": "matched_pdp_blanked"
+    },
+    "training": {
+      "steps": 3000,
+      "batch_size": 64,
+      "learning_rate": 0.001,
+      "ebno_db": [
+        6,
+        24
+      ],
+      "occupancies": [
+        0.0,
+        0.02,
+        0.08
+      ],
+      "mean_lengths": [
+        1,
+        4,
+        8
+      ],
+      "inr_db": [
+        8,
+        20
+      ],
+      "validation_interval": 100
+    },
+    "ldpc": {
+      "rate": 0.5,
+      "iterations": 12
+    },
+    "diagnostic": {
+      "frames_per_point": 2048,
+      "ebno_db": [
+        8,
+        12,
+        16,
+        20
+      ],
+      "batch_size": 64,
+      "regimes": [
+        {
+          "name": "clean",
+          "occupancy": 0.0,
+          "mean_length": 1,
+          "inr_db": 15
+        },
+        {
+          "name": "matched_burst",
+          "occupancy": 0.08,
+          "mean_length": 8,
+          "inr_db": 15
+        },
+        {
+          "name": "long_burst_shift",
+          "occupancy": 0.08,
+          "mean_length": 24,
+          "inr_db": 20
+        }
+      ]
+    }
+  },
+  "config_sha256": "749217b5c2e4fd6a72f1a06584874d8714f41c93b4d1adb747a0a24300dad5df",
+  "utc_start": "2026-10-23T18:32:22.097842+00:00",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "torch": "2.14.1",
+  "numpy": "2.5.4",
+  "device": "mps",
+  "parameters": 86738,
+  "source_sha256": {
+    "src/adaptive_ofdm/__init__.py": "7363c960f7e935db461c2df4c987208daee7a9a9dd74e2eb88db246536480975",
+    "src/adaptive_ofdm/admission.py": "a570c0d4c35360d16e7708cc414eec348cc32cadd51dfda6e818438f33708b6b",
+    "src/adaptive_ofdm/channels.py": "ee2251c684501d866ff2b9db7b91b8b6f27fdd222df19f25f616427fcbcaa3e2",
+    "src/adaptive_ofdm/classical.py": "c403a4bde41dab474f96fc53372c4cc43c17155bb0c80c4ef3c922e0bda68123",
+    "src/adaptive_ofdm/coding.py": "85de42d5eb855333ea8a303eabfcfbd26e09a08312f5bac6649b6529a10b5ef9",
+    "src/adaptive_ofdm/ldpc.py": "a3579d0654fdf2e2f4cf0a66f4c0a2a840bace806b26933673f46a9d3549ab1d",
+    "src/adaptive_ofdm/neural.py": "51a79915b3283a612c13d9d107173f48718cd38b63ab31a9ee00ebe650ac18be",
+    "src/adaptive_ofdm/phy.py": "ee28468330e1b9643350811cdd82a25599c4e506092ff62c7be6d6d740fb92ee",
+    "src/adaptive_ofdm/policy.py": "30fd36f29b4722aa96924398f8f7c38173ad3d54e9eb358009d0add8d854830a",
+    "src/adaptive_ofdm/routing.py": "fabfae3fae5877ab212cf2187674300adace7bf3da7f7fab9aeec8f10132eb9a",
+    "src/adaptive_ofdm/runtime.py": "8bf611340e69347d5c634cac25089567996fa8a7a25668eaddade0d1d43f27d7"
+  },
+  "best_validation_loss": 0.10437226295471191,
+  "elapsed_seconds": 37.38527791699926
+}

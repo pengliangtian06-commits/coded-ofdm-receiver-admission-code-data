@@ -1,0 +1,95 @@
+{
+  "threshold": 3,
+  "prior_scale": 1,
+  "temperature": 0.6419240036373245,
+  "selection": "minimum pooled posterior BLER on development-validation draws; ties follow declared grid order",
+  "temperature_objective": "coded-bit CE at selected settings",
+  "validation_seed": 940001,
+  "frames": 1536,
+  "grid": [
+    {
+      "threshold": 2,
+      "prior_scale": 0.5,
+      "frames": 1536,
+      "posterior_errors": 603,
+      "posterior_bler": 0.392578125
+    },
+    {
+      "threshold": 2,
+      "prior_scale": 1,
+      "frames": 1536,
+      "posterior_errors": 583,
+      "posterior_bler": 0.3795572916666667
+    },
+    {
+      "threshold": 2,
+      "prior_scale": 2,
+      "frames": 1536,
+      "posterior_errors": 579,
+      "posterior_bler": 0.376953125
+    },
+    {
+      "threshold": 3,
+      "prior_scale": 0.5,
+      "frames": 1536,
+      "posterior_errors": 383,
+      "posterior_bler": 0.24934895833333334
+    },
+    {
+      "threshold": 3,
+      "prior_scale": 1,
+      "frames": 1536,
+      "posterior_errors": 379,
+      "posterior_bler": 0.24674479166666666
+    },
+    {
+      "threshold": 3,
+      "prior_scale": 2,
+      "frames": 1536,
+      "posterior_errors": 379,
+      "posterior_bler": 0.24674479166666666
+    },
+    {
+      "threshold": 4,
+      "prior_scale": 0.5,
+      "frames": 1536,
+      "posterior_errors": 400,
+      "posterior_bler": 0.2604166666666667
+    },
+    {
+      "threshold": 4,
+      "prior_scale": 1,
+      "frames": 1536,
+      "posterior_errors": 393,
+      "posterior_bler": 0.255859375
+    },
+    {
+      "threshold": 4,
+      "prior_scale": 2,
+      "frames": 1536,
+      "posterior_errors": 391,
+      "posterior_bler": 0.2545572916666667
+    },
+    {
+      "threshold": 1000000,
+      "prior_scale": 0.5,
+      "frames": 1536,
+      "posterior_errors": 422,
+      "posterior_bler": 0.2747395833333333
+    },
+    {
+      "threshold": 1000000,
+      "prior_scale": 1,
+      "frames": 1536,
+      "posterior_errors": 416,
+      "posterior_bler": 0.2708333333333333
+    },
+    {
+      "threshold": 1000000,
+      "prior_scale": 2,
+      "frames": 1536,
+      "posterior_errors": 411,
+      "posterior_bler": 0.267578125
+    }
+  ]
+}

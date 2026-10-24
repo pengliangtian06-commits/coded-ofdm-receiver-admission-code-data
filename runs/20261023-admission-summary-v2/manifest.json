@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "bootstrap_seed": 970001,
+  "bootstrap_repeats": 5000,
+  "interval_scope": "conditional on three trained models; group identical frame index across conditions/seeds",
+  "zero_error": "one-sided exact Bernoulli upper at95%, not degenerate empirical bootstrap",
+  "main_condition_count": 72,
+  "frames_per_condition_per_seed": 2048,
+  "models": 3,
+  "outcome_evaluations": 3981312,
+  "warning": "multiple frontiers and per-condition intervals descriptive, not multiplicity-adjusted confirmatory tests"
+}

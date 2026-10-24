@@ -1,0 +1,49 @@
+{
+  "status": "predeclared before new final samples; development results retained separately",
+  "title": "When should a coded OFDM receiver invoke a neural demapper? A cost-aware study under burst interference and channel mismatch",
+  "numerology": {"fft_size":64,"cp_length":16,"symbols":4,"guard":4,"pilot_spacing":4},
+  "seeds": [1729,1730,1731],
+  "fit_seed": 930001,
+  "validation_seed": 940001,
+  "test_seed": 950001,
+  "timing_seeds": [960001,960002],
+  "frames_per_development_point": 512,
+  "frames_per_final_point": 2048,
+  "batch_size": 64,
+  "ebno_db": [8,12,16,20],
+  "penalties_ms": [0,1,2,4,8,16,32,64,128],
+  "primary_penalty_ms": 16,
+  "logistic_regularization_grid": [0.001,0.01,0.1],
+  "blank_threshold_grid": [2,3,4,1000000],
+  "prior_scale_grid": [0.5,1,2],
+  "development_channels": [
+    {"name":"EXP5","profile":null,"speed":0,"delay_ns":0},
+    {"name":"TDLA","profile":"A","speed":0,"delay_ns":100},
+    {"name":"TDLB","profile":"B","speed":15,"delay_ns":100}
+  ],
+  "development_regimes": [
+    {"name":"clean","occupancy":0,"length":1,"inr_db":15},
+    {"name":"matched","occupancy":0.08,"length":8,"inr_db":15}
+  ],
+  "final_channels": [
+    {"name":"EXP5","profile":null,"speed":0,"delay_ns":0},
+    {"name":"TDLA","profile":"A","speed":0,"delay_ns":100},
+    {"name":"TDLB","profile":"B","speed":15,"delay_ns":100},
+    {"name":"TDLC","profile":"C","speed":30,"delay_ns":300},
+    {"name":"TDLD","profile":"D","speed":30,"delay_ns":300}
+  ],
+  "final_regimes": [
+    {"name":"clean","occupancy":0,"length":1,"inr_db":15},
+    {"name":"independent","occupancy":0.08,"length":1.0869565217391304,"inr_db":15},
+    {"name":"matched","occupancy":0.08,"length":8,"inr_db":15},
+    {"name":"long_only","occupancy":0.08,"length":24,"inr_db":15},
+    {"name":"strong_only","occupancy":0.08,"length":8,"inr_db":20},
+    {"name":"long_strong","occupancy":0.08,"length":24,"inr_db":20}
+  ],
+  "final_condition_rule": "EXP5 all six regimes; each TDL clean, matched, long_strong. TDLD excluded from all fitting and all earlier development evaluations. TDLC was explored before this freeze and is a transfer control, not an unseen profile.",
+  "wider_control": {"symbols":8,"channel":"EXP5","regimes":["clean","matched"],"code_rate":0.5},
+  "higher_rate_control": {"symbols":4,"channel":"EXP5","regimes":["clean","matched"],"code_rate":0.75},
+  "uncertainty": "paired frame bootstrap conditional on three trained models; preserve common frame groups across seeds; report seed range separately",
+  "timing": "batch one, CPU, complete waveform-to-decoded-bit path, randomized method order, warmup, two sessions; separately report batch64 neural throughput. No RF real-time or power claim.",
+  "acceptance": "report failures and strong conventional controls even if admission has no significant benefit; no tuning after final test"
+}

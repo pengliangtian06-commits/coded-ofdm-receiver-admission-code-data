@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "torch": "2.14.1",
+  "numpy": "2.5.4",
+  "cpu_threads": 4,
+  "neural_device": "mps",
+  "sessions": 2,
+  "timing_frames_per_session_per_model": 576,
+  "peak_process_rss_bytes": 614514688,
+  "rss_warning": "macOS process-wide peak, not incremental path memory",
+  "scope": "complete waveform-to-decoded-bits including selection; batch1; FFT/features/decoder on CPU, neural path on recorded device; NumPy output conversion synchronizes accelerator",
+  "source_sha256": "c01baba196fe5eda75c3563054c221cddddf4762f6815f21bed8ea123f8c7614"
+}

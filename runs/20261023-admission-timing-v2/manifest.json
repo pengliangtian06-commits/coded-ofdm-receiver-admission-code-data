@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "torch": "2.14.1",
+  "numpy": "2.5.4",
+  "cpu_threads": 4,
+  "sessions": 2,
+  "timing_frames_per_session_per_model": 576,
+  "peak_process_rss_bytes": 489062400,
+  "rss_warning": "macOS process-wide peak, not incremental path memory",
+  "scope": "complete waveform-to-decoded-bits including selection; batch1 CPU",
+  "source_sha256": "b0401754784dd0c7feed74c49ae5b2351efd3ffd6df5a9f9fb6cf078167ae46e"
+}

@@ -1,0 +1,77 @@
+{
+  "purpose": "frozen final architecture; exact deterministic-pilot CP energy; independent shallow control",
+  "seed": 1731,
+  "numerology": {
+    "fft_size": 64,
+    "cp_length": 16,
+    "symbols": 4,
+    "guard": 4,
+    "pilot_spacing": 4
+  },
+  "network": {
+    "width": 48,
+    "blocks": 2,
+    "exits": [
+      2
+    ],
+    "frontend": "matched_pdp_blanked"
+  },
+  "training": {
+    "steps": 3000,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "ebno_db": [
+      6,
+      24
+    ],
+    "occupancies": [
+      0.0,
+      0.02,
+      0.08
+    ],
+    "mean_lengths": [
+      1,
+      4,
+      8
+    ],
+    "inr_db": [
+      8,
+      20
+    ],
+    "validation_interval": 100
+  },
+  "ldpc": {
+    "rate": 0.5,
+    "iterations": 12
+  },
+  "diagnostic": {
+    "frames_per_point": 2048,
+    "ebno_db": [
+      8,
+      12,
+      16,
+      20
+    ],
+    "batch_size": 64,
+    "regimes": [
+      {
+        "name": "clean",
+        "occupancy": 0.0,
+        "mean_length": 1,
+        "inr_db": 15
+      },
+      {
+        "name": "matched_burst",
+        "occupancy": 0.08,
+        "mean_length": 8,
+        "inr_db": 15
+      },
+      {
+        "name": "long_burst_shift",
+        "occupancy": 0.08,
+        "mean_length": 24,
+        "inr_db": 20
+      }
+    ]
+  }
+}

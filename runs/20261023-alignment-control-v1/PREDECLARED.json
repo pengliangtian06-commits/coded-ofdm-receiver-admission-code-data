@@ -1,0 +1,21 @@
+{
+  "purpose": "mechanism control added after freezing primary study; no refit, calibration or operating-point change",
+  "seed": 991001,
+  "frames_per_point": 1024,
+  "channels": [
+    "TDLA",
+    "TDLC",
+    "TDLD"
+  ],
+  "regimes": [
+    "clean",
+    "matched",
+    "long_strong"
+  ],
+  "ebno_db": [
+    12,
+    20
+  ],
+  "alignment": "unaligned y[0:T] and compensated y[4:T+4] from the identical extended received waveform",
+  "source_sha256": "721dfbf44400fab18d7a1b0710c51281adba1c4aba1a8458275e21afc52317aa"
+}

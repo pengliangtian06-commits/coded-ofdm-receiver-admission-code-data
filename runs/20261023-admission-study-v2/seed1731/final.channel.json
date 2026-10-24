@@ -1,0 +1,66 @@
+{
+  "TDLA": {
+    "settings": {
+      "profile": "A",
+      "delay_spread_s": 1.0000000000000001e-07,
+      "carrier_frequency_hz": 3500000000.0,
+      "sample_rate_hz": 1920000.0,
+      "speed_m_per_s": 0,
+      "l_min": -4,
+      "l_max": 11,
+      "seed": 1060001
+    },
+    "mean_captured_energy": 0.9934229275415186,
+    "minimum_batch_captured_energy": 0.9816678662975227,
+    "added_group_delay_samples": 4,
+    "fir_length": 16
+  },
+  "TDLB": {
+    "settings": {
+      "profile": "B",
+      "delay_spread_s": 1.0000000000000001e-07,
+      "carrier_frequency_hz": 3500000000.0,
+      "sample_rate_hz": 1920000.0,
+      "speed_m_per_s": 15,
+      "l_min": -4,
+      "l_max": 11,
+      "seed": 1070001
+    },
+    "mean_captured_energy": 0.9938548979110783,
+    "minimum_batch_captured_energy": 0.9855695478352874,
+    "added_group_delay_samples": 4,
+    "fir_length": 16
+  },
+  "TDLC": {
+    "settings": {
+      "profile": "C",
+      "delay_spread_s": 3.0000000000000004e-07,
+      "carrier_frequency_hz": 3500000000.0,
+      "sample_rate_hz": 1920000.0,
+      "speed_m_per_s": 30,
+      "l_min": -4,
+      "l_max": 11,
+      "seed": 1080001
+    },
+    "mean_captured_energy": 0.9847861143022026,
+    "minimum_batch_captured_energy": 0.9768586179482744,
+    "added_group_delay_samples": 4,
+    "fir_length": 16
+  },
+  "TDLD": {
+    "settings": {
+      "profile": "D",
+      "delay_spread_s": 3.0000000000000004e-07,
+      "carrier_frequency_hz": 3500000000.0,
+      "sample_rate_hz": 1920000.0,
+      "speed_m_per_s": 30,
+      "l_min": -4,
+      "l_max": 11,
+      "seed": 1090001
+    },
+    "mean_captured_energy": 0.9991709618602576,
+    "minimum_batch_captured_energy": 0.9966857126536242,
+    "added_group_delay_samples": 4,
+    "fir_length": 16
+  }
+}

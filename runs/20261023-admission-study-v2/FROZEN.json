@@ -1,0 +1,221 @@
+{
+  "utc": "2026-10-23T18:38:43.437664+00:00",
+  "protocol": {
+    "status": "predeclared before new final samples; development results retained separately",
+    "title": "When should a coded OFDM receiver invoke a neural demapper? A cost-aware study under burst interference and channel mismatch",
+    "numerology": {
+      "fft_size": 64,
+      "cp_length": 16,
+      "symbols": 4,
+      "guard": 4,
+      "pilot_spacing": 4
+    },
+    "seeds": [
+      1729,
+      1730,
+      1731
+    ],
+    "fit_seed": 930001,
+    "validation_seed": 940001,
+    "test_seed": 950001,
+    "timing_seeds": [
+      960001,
+      960002
+    ],
+    "frames_per_development_point": 512,
+    "frames_per_final_point": 2048,
+    "batch_size": 64,
+    "ebno_db": [
+      8,
+      12,
+      16,
+      20
+    ],
+    "penalties_ms": [
+      0,
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "primary_penalty_ms": 16,
+    "logistic_regularization_grid": [
+      0.001,
+      0.01,
+      0.1
+    ],
+    "blank_threshold_grid": [
+      2,
+      3,
+      4,
+      1000000
+    ],
+    "prior_scale_grid": [
+      0.5,
+      1,
+      2
+    ],
+    "development_channels": [
+      {
+        "name": "EXP5",
+        "profile": null,
+        "speed": 0,
+        "delay_ns": 0
+      },
+      {
+        "name": "TDLA",
+        "profile": "A",
+        "speed": 0,
+        "delay_ns": 100
+      },
+      {
+        "name": "TDLB",
+        "profile": "B",
+        "speed": 15,
+        "delay_ns": 100
+      }
+    ],
+    "development_regimes": [
+      {
+        "name": "clean",
+        "occupancy": 0,
+        "length": 1,
+        "inr_db": 15
+      },
+      {
+        "name": "matched",
+        "occupancy": 0.08,
+        "length": 8,
+        "inr_db": 15
+      }
+    ],
+    "final_channels": [
+      {
+        "name": "EXP5",
+        "profile": null,
+        "speed": 0,
+        "delay_ns": 0
+      },
+      {
+        "name": "TDLA",
+        "profile": "A",
+        "speed": 0,
+        "delay_ns": 100
+      },
+      {
+        "name": "TDLB",
+        "profile": "B",
+        "speed": 15,
+        "delay_ns": 100
+      },
+      {
+        "name": "TDLC",
+        "profile": "C",
+        "speed": 30,
+        "delay_ns": 300
+      },
+      {
+        "name": "TDLD",
+        "profile": "D",
+        "speed": 30,
+        "delay_ns": 300
+      }
+    ],
+    "final_regimes": [
+      {
+        "name": "clean",
+        "occupancy": 0,
+        "length": 1,
+        "inr_db": 15
+      },
+      {
+        "name": "independent",
+        "occupancy": 0.08,
+        "length": 1.0869565217391304,
+        "inr_db": 15
+      },
+      {
+        "name": "matched",
+        "occupancy": 0.08,
+        "length": 8,
+        "inr_db": 15
+      },
+      {
+        "name": "long_only",
+        "occupancy": 0.08,
+        "length": 24,
+        "inr_db": 15
+      },
+      {
+        "name": "strong_only",
+        "occupancy": 0.08,
+        "length": 8,
+        "inr_db": 20
+      },
+      {
+        "name": "long_strong",
+        "occupancy": 0.08,
+        "length": 24,
+        "inr_db": 20
+      }
+    ],
+    "final_condition_rule": "EXP5 all six regimes; each TDL clean, matched, long_strong. TDLD excluded from all fitting and all earlier development evaluations. TDLC was explored before this freeze and is a transfer control, not an unseen profile.",
+    "wider_control": {
+      "symbols": 8,
+      "channel": "EXP5",
+      "regimes": [
+        "clean",
+        "matched"
+      ],
+      "code_rate": 0.5
+    },
+    "higher_rate_control": {
+      "symbols": 4,
+      "channel": "EXP5",
+      "regimes": [
+        "clean",
+        "matched"
+      ],
+      "code_rate": 0.75
+    },
+    "uncertainty": "paired frame bootstrap conditional on three trained models; preserve common frame groups across seeds; report seed range separately",
+    "timing": "batch one, CPU, complete waveform-to-decoded-bit path, randomized method order, warmup, two sessions; separately report batch64 neural throughput. No RF real-time or power claim.",
+    "acceptance": "report failures and strong conventional controls even if admission has no significant benefit; no tuning after final test"
+  },
+  "source_sha256": {
+    "src/adaptive_ofdm/__init__.py": "7363c960f7e935db461c2df4c987208daee7a9a9dd74e2eb88db246536480975",
+    "src/adaptive_ofdm/admission.py": "a570c0d4c35360d16e7708cc414eec348cc32cadd51dfda6e818438f33708b6b",
+    "src/adaptive_ofdm/channels.py": "ee2251c684501d866ff2b9db7b91b8b6f27fdd222df19f25f616427fcbcaa3e2",
+    "src/adaptive_ofdm/classical.py": "c403a4bde41dab474f96fc53372c4cc43c17155bb0c80c4ef3c922e0bda68123",
+    "src/adaptive_ofdm/coding.py": "85de42d5eb855333ea8a303eabfcfbd26e09a08312f5bac6649b6529a10b5ef9",
+    "src/adaptive_ofdm/ldpc.py": "a3579d0654fdf2e2f4cf0a66f4c0a2a840bace806b26933673f46a9d3549ab1d",
+    "src/adaptive_ofdm/neural.py": "51a79915b3283a612c13d9d107173f48718cd38b63ab31a9ee00ebe650ac18be",
+    "src/adaptive_ofdm/phy.py": "ee28468330e1b9643350811cdd82a25599c4e506092ff62c7be6d6d740fb92ee",
+    "src/adaptive_ofdm/policy.py": "30fd36f29b4722aa96924398f8f7c38173ad3d54e9eb358009d0add8d854830a",
+    "src/adaptive_ofdm/routing.py": "fabfae3fae5877ab212cf2187674300adace7bf3da7f7fab9aeec8f10132eb9a",
+    "src/adaptive_ofdm/runtime.py": "8bf611340e69347d5c634cac25089567996fa8a7a25668eaddade0d1d43f27d7"
+  },
+  "weights_sha256": {
+    "runs/20261023-final-shallow-1729/best.pt": "967abbef6236085701ab10113d4fc2b633c197faca772e7b5d58bcbcc9ff2409",
+    "runs/20261023-final-deep-1729/best.pt": "cbb2e1f40ae33e9de2aaf9d39dac21e7c61d485b511dab5936f9467c3b3f72cc",
+    "runs/20261023-final-shallow-1730/best.pt": "16bf7aad8e393882998e292ff502dc7f9f6a80e35cc6876021d8b421cacf193f",
+    "runs/20261023-final-deep-1730/best.pt": "d4a6a6e91a7590e0c14fbc790a64a900ae0e8537274c0cb574bc147a72e94d1e",
+    "runs/20261023-final-shallow-1731/best.pt": "6ea76ff7792867f79fe83c37983eb492b07808d6a1ec0a151f485c9c9ce618ed",
+    "runs/20261023-final-deep-1731/best.pt": "a2fa01c5860060f2d6ea071a1f264ae8ebe36b3e9e3023e632f2e6d02c748f35"
+  },
+  "selection_warning": "final test must not change models, settings, risk calibration or operating points",
+  "selection_sha256": {
+    "runs/20261023-admission-study-v2/classical_settings.json": "db633a1e51584a58a0368e1a1bb5b524730a7511c3bcfb89aa9b0e5d4807fe45",
+    "runs/20261023-admission-study-v2/seed1731/router_models.json": "f59f3f4e72d315e92c216f1590304e473edd9baedb7df1b021e96f7685d9a338",
+    "runs/20261023-admission-study-v2/seed1730/router_models.json": "df52711b97da4cc2aeb7a89f62b97d4c19b80c5546673a0827b5ad065a16d176",
+    "runs/20261023-admission-study-v2/seed1729/router_models.json": "27bc78cfc094b51337a521f0cad7c74ec47b343b18a2f55f6a5f5da4401b3bc6",
+    "runs/20261023-admission-study-v2/seed1731/costs.json": "3a4b4e34ae999148e94d3283267188f4d3caed1f0be0c8e25c43b662570c0fa2",
+    "runs/20261023-admission-study-v2/seed1730/costs.json": "249c7d8987d69073e271db7ac2d1dfe1c5aa9993e525707888f0f8f848976170",
+    "runs/20261023-admission-study-v2/seed1729/costs.json": "4f854323bbb28ae7e7169da15312fa28a6597bd348a10d72f94970ad28461508",
+    "scripts/run_admission_study.py": "9babe314daf9a499c14e2631dc80a3faa98d68b285d90a46aef5f1bf1714123d"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "names": [
+    "linear",
+    "blanked_linear",
+    "isotropic",
+    "blanked_isotropic",
+    "matched_coherent",
+    "matched_posterior",
+    "matched_temperature",
+    "independent_shallow",
+    "deep"
+  ],
+  "mean_ms": [
+    2.1256881640625,
+    2.1552266015625,
+    2.1804622421874997,
+    2.204933609375,
+    2.1267141875,
+    2.1759853359375,
+    2.1251761171875,
+    2.4228320078124996,
+    2.7643379218749997
+  ],
+  "frames": 128,
+  "scope": "full waveform-to-decoded-bit CPU batch1",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "processor": "arm",
+  "torch_threads": 4
+}
