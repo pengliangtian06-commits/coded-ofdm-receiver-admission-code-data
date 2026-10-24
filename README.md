@@ -4,7 +4,7 @@ Version 0.1.0. Creators: Pengliang Tian (ORCID 0009-0003-5941-9797) and Changjia
 
 This research archive implements pre-neural admission into a nine-path conventional/neural coded OFDM receiver bank under time-domain burst interference and channel mismatch. It supplies the frozen source, six receiver checkpoints, fitting and validation samples, paired final outcomes, transfer and delay-alignment controls, and complete CPU/MPS timing measurements. All communications data are simulated. The associated manuscript remains private during author review; this release is code and data, not an accepted article or a manuscript preprint.
 
-Download `coded-ofdm-code-data-v1.zip` and its SHA256 manifest from the repository release. Extract into a clean folder. The browsable GitHub source tree contains text files; the release ZIP also contains numerical arrays and binary weights.
+Download [`coded-ofdm-code-data-v1.zip`](https://zenodo.org/records/23609347/files/coded-ofdm-code-data-v1.zip?download=1) and its [SHA256 manifest](https://zenodo.org/records/23609347/files/coded-ofdm-code-data-v1.manifest.json?download=1) from the [Zenodo archive, DOI 10.5281/zenodo.23609347](https://doi.org/10.5281/zenodo.23609347). Extract into a clean folder. The browsable GitHub source tree contains text files; the Zenodo ZIP also contains numerical arrays and binary weights. GitHub and Zenodo are linked rather than requiring duplicate large-file hosting.
 
 ## Reproduce stored evidence
 
@@ -18,7 +18,7 @@ python3.12 -m venv .venv
 .venv/bin/python scripts/replay_delivery.py --output replay-new.json
 ```
 
-Replay verifies every frozen source/checkpoint/selector hash, recomputes main, transfer, alignment and timing aggregates, checks LDPC round-trip behavior, loads six models on CPU and exercises nine soft-bit paths and complete admission. This verifies stored outcomes plus a small receiver smoke check; it is not an independent full-data regeneration. The original full package passed 37 numerical tests. Public-package extraction/replay results are supplied separately after verification.
+Replay verifies every frozen source/checkpoint/selector hash, recomputes main, transfer, alignment and timing aggregates, checks LDPC round-trip behavior, loads six models on CPU and exercises nine soft-bit paths and complete admission. This verifies stored outcomes plus a small receiver smoke check; it is not an independent full-data regeneration. The original full package passed 37 numerical tests. The [public-package verification](https://zenodo.org/records/23609347/files/public-extraction-verification-v1.json?download=1) and [replay result](https://zenodo.org/records/23609347/files/replay-public-package-v1.json?download=1) confirm 37 tests passed and replay succeeded from a clean extraction.
 
 The scientific freeze is `runs/20261023-admission-study-v2/FROZEN.json`. Main expected frame energy is 271.74748120364274 after deterministic pilot-prefix correction. Earlier exploratory experiments are excluded. The final study has 72 equally weighted conditions, 2,048 frames per condition and three fitted systems. Main arrays have 147,456 rows and nine receiver columns per seed. `NAMES` in `src/adaptive_ofdm/admission.py` declares the column order. `choices.npz` contains branch indices; outcomes are 0/1 block errors. Fitting/validation arrays are separate from final evaluation.
 
@@ -43,3 +43,5 @@ A separate known-delay-compensated control has BLER 0.1255968/0.1235894/0.123028
 ## Reuse
 
 Original project code is offered under MIT (`LICENSE`); generated simulation data, model weights and source CSVs under CC BY 4.0 (`DATA_LICENSE.md`). Dependencies retain their own licenses and are not relicensed or redistributed here. No grant funding or competing interests were reported by the authors. Author CRediT roles are pending and are not inferred from repository ownership.
+
+The original immutable ZIP README predates assignment of the DOI; this repository README adds the public links and verification status. No frozen numerical/source/checkpoint file is changed.
